@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	<display-name>mmd</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+      classpath:applicationContext-server.xml
+    </param-value>
+	</context-param>
+    <listener>
+     	<listener-class>
+       	org.springframework.web.context.ContextLoaderListener
+     	</listener-class>
+ 	</listener>
+    <listener>
+    	<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <servlet>
+    	<servlet-name>CXFServlet</servlet-name>
+    	<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+   		<load-on-startup>1</load-on-startup>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>CXFServlet</servlet-name>
+    	<url-pattern>/*</url-pattern>
+  	</servlet-mapping>
+  
+	<!--  <filter>
+		<filter-name>GidFilter</filter-name>
+		<filter-class>cn.vrv.mmd.opinion.filter.GidFilter</filter-class>
+		<init-param>
+			<param-name>login</param-name>
+			<param-value>/login</param-value>
+		</init-param>
+		<init-param>
+			<param-name>register</param-name>
+			<param-value>/register</param-value>
+		</init-param>
+		<init-param>
+			<param-name>check</param-name>
+			<param-value>/check</param-value>
+		</init-param>
+	</filter>
+		<filter-mapping>
+			<filter-name>GidFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping> -->
+  
+  	<welcome-file-list>
+	    <welcome-file>index.html</welcome-file>
+	    <welcome-file>index.htm</welcome-file>
+	    <welcome-file>index.jsp</welcome-file>
+	    <welcome-file>default.html</welcome-file>
+	    <welcome-file>default.htm</welcome-file>
+	    <welcome-file>default.jsp</welcome-file>
+  	</welcome-file-list>
+</web-app>
