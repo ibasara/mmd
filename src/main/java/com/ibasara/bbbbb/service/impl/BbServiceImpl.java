@@ -9,7 +9,7 @@ public class BbServiceImpl implements IBbService {
 
 	@Override
 	public String methodb() {
-		System.out.println("sb---bb");
+		System.out.println("sb");
 		return "sb";
 	}
 
